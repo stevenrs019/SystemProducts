@@ -1,0 +1,23 @@
+# Archivos de compilación
+bin/
+obj/
+*.suo
+*.user
+*.dll
+*.exe
+
+# Configuración de usuario
+.vscode/
+.idea/
+
+# Archivos de paquetes y dependencias
+packages/
+node_modules/
+*.log
+
+# Publicaciones
+*.publishsettings
+*.config
+
+# Archivos de configuración de IIS Express
+.vs/

@@ -1,0 +1,66 @@
+﻿/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor Principal */
+.container {
+    background: transparent;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+/* Footer */
+.footer {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Tablas */
+.table {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .table thead {
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        color: white;
+    }
+    .table thead th {
+        color: white;
+    }
+    .table tbody tr{
+        text-align: center;
+    }
+
+    .table tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+.card-table {
+    -webkit-box-shadow: 13px 14px 14px -1px rgba(0,0,0,0.49);
+    -moz-box-shadow: 13px 14px 14px -1px rgba(0,0,0,0.49);
+    box-shadow: 13px 14px 14px -1px rgba(0,0,0,0.49);
+    border-radius: 25px;
+    padding: 40px;
+}

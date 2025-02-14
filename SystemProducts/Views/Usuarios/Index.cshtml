@@ -1,0 +1,89 @@
+﻿@model List<SystemProducts.Models.USUARIOS>
+
+@{
+    ViewBag.Title = "Usuarios";
+}
+
+
+<h2 class="text-primary mb-4"><i class="fa fa-users"></i> Lista de Usuarios</h2>
+
+<p>
+    <a href="@Url.Action("Create", "Usuarios")" class="btn btn-success">
+        <i class="fa fa-plus"></i> Crear Nuevo Usuario
+    </a>
+</p>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Rol</th>
+            <th>Estado</th>
+            <th>Fecha de Registro</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td>@item.Apellido</td>
+                    <td>@item.Correo</td>
+                    <td>@item.Rol</td>
+                    <td>@item.Estado</td>
+                    <td>@(item.FechaRegistro.HasValue ? item.FechaRegistro.Value.ToString("dd/MM/yyyy") : "N/A")</td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.IDUsuario }, new { @class = "btn btn-warning btn-sm" })
+                        @Html.ActionLink("Detalles", "Details", new { id = item.IDUsuario }, new { @class = "btn btn-info btn-sm" })
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.IDUsuario }, new { @class = "btn btn-danger btn-sm" })
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="7" class="text-center">No hay usuarios registrados.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Mostrar alerta de éxito
+        var successMessage = '@TempData["SuccessMessage"]';
+        if (successMessage) {
+            Swal.fire({
+                title: "Éxito",
+                text: successMessage,
+                icon: "success",
+                confirmButtonText: "OK"
+            });
+        }
+
+        // Mostrar alerta de error
+        var errorMessage = '@TempData["ErrorMessage"]';
+        if (errorMessage) {
+            Swal.fire({
+                title: "Error",
+                text: errorMessage,
+                icon: "error",
+                confirmButtonText: "OK"
+            });
+        }
+    });
+</script>

@@ -1,0 +1,36 @@
+﻿@model SystemProducts.Models.USUARIOS
+
+@{
+    ViewBag.Title = "Detalles del Usuario";
+}
+<div class="card-table">
+    <h2>Detalles del Usuario</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>Nombre:</dt>
+            <dd>@Model.Nombre</dd>
+
+            <dt>Apellido:</dt>
+            <dd>@Model.Apellido</dd>
+
+            <dt>Correo:</dt>
+            <dd>@Model.Correo</dd>
+
+            <dt>Rol:</dt>
+            <dd>@Model.Rol</dd>
+
+            <dt>Estado:</dt>
+            <dd>@(Model.Estado ?? false ? "Activo" : "Inactivo")</dd>
+
+            <dt>Fecha de Registro:</dt>
+            <dd>@(Model.FechaRegistro.HasValue ? Model.FechaRegistro.Value.ToString("dd/MM/yyyy") : "N/A")</dd>
+        </dl>
+    </div>
+
+    <p class="mt-4">
+        @Html.ActionLink("Editar", "Edit", new { id = Model.IDUsuario }, new { @class = "btn btn-warning" })
+        @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-default" })
+    </p>
+</div>

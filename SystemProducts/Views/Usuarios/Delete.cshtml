@@ -1,0 +1,31 @@
+﻿@model SystemProducts.Models.USUARIOS
+
+@{
+    ViewBag.Title = "Eliminar Usuario";
+}
+<div class="card-table">
+    <h2>¿Estás seguro de que deseas eliminar este usuario?</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>Nombre:</dt>
+            <dd>@Model.Nombre</dd>
+
+            <dt>Apellido:</dt>
+            <dd>@Model.Apellido</dd>
+
+            <dt>Correo:</dt>
+            <dd>@Model.Correo</dd>
+        </dl>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions mt-4">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
