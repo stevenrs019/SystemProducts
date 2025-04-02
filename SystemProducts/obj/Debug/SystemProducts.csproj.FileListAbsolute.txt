@@ -1,3 +1,5 @@
+C:\Users\user\source\repos\SystemProducts\SystemProducts\obj\Debug\SystemProducts.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\SystemProducts\SystemProducts\obj\Debug\SystemProducts.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\SystemProducts\SystemProducts\bin\SystemProducts.dll.config
 C:\Users\user\source\repos\SystemProducts\SystemProducts\bin\SystemProducts.dll
 C:\Users\user\source\repos\SystemProducts\SystemProducts\bin\SystemProducts.pdb
@@ -83,8 +85,6 @@ C:\Users\user\source\repos\SystemProducts\SystemProducts\bin\es\System.Web.Razor
 C:\Users\user\source\repos\SystemProducts\SystemProducts\bin\es\System.Web.WebPages.resources.dll
 C:\Users\user\source\repos\SystemProducts\SystemProducts\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\user\source\repos\SystemProducts\SystemProducts\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\user\source\repos\SystemProducts\SystemProducts\obj\Debug\SystemProducts.csproj.AssemblyReference.cache
-C:\Users\user\source\repos\SystemProducts\SystemProducts\obj\Debug\SystemProducts.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\SystemProducts\SystemProducts\obj\Debug\SystemPr.B4E21A12.Up2Date
 C:\Users\user\source\repos\SystemProducts\SystemProducts\obj\Debug\SystemProducts.dll
 C:\Users\user\source\repos\SystemProducts\SystemProducts\obj\Debug\SystemProducts.pdb

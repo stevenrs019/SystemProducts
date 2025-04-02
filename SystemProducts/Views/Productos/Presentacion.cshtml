@@ -1,0 +1,27 @@
+﻿@model List<SystemProducts.Models.PRODUCTOS>
+
+@{
+    ViewBag.Title = "Nuestros Productos";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center text-primary"><i class="fa fa-box"></i> Nuestros Productos</h2>
+    <p class="text-center">Explora nuestra variedad de productos.</p>
+
+    <div class="row">
+        @foreach (var producto in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="@Url.Content(producto.Imagen)" class="img-thumbnail" alt="@producto.Nombre" style="max-width: 100%;" onerror="this.onerror=null; this.src='/Content/Img/default.png';">
+                    <div class="card-body">
+                        <h5 class="card-title">@producto.Nombre</h5>
+                        <p class="card-text">@producto.CATEGORIAS_PRODUCTOS.NombreCategoria</p>
+                        <p class="card-text"><strong>Precio:</strong> $@producto.Precio.ToString("N2")</p>
+                        @*<a href="#" class="btn btn-primary">Ver más</a>*@
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

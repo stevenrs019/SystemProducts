@@ -20,7 +20,7 @@
     </div>
 }
 
-<table class="table table-hover">
+<table id="tableUsers" class="table table-hover">
     <thead>
         <tr>
             <th>Nombre</th>
@@ -42,7 +42,8 @@
                     <td>@item.Apellido</td>
                     <td>@item.Correo</td>
                     <td>@item.Rol</td>
-                    <td>@item.Estado</td>
+                    <td>@(item.Estado.HasValue ? (item.Estado.Value ? "Activo" : "Inactivo") : "Desconocido")</td>
+
                     <td>@(item.FechaRegistro.HasValue ? item.FechaRegistro.Value.ToString("dd/MM/yyyy") : "N/A")</td>
                     <td>
                         @Html.ActionLink("Editar", "Edit", new { id = item.IDUsuario }, new { @class = "btn btn-warning btn-sm" })
@@ -87,3 +88,64 @@
         }
     });
 </script>
+
+<script type="text/javascript">
+    $('#tableUsers').DataTable({
+        "responsive": true,
+        "aServerSide": true,
+        "autoWidth": false,
+        "deferRender": true,
+        "retrieve": true,
+        "processing": true,
+        "paging": true,
+        "dom": 'Bfrtip',
+        "buttons": [
+            {
+                extend: "csv",
+                text: "Exportar CSV",
+                exportOptions: {
+                    columns: ':not(:last-child)' // Oculta la última columna (Acciones)
+                }
+            },
+            {
+                extend: "excel",
+                text: "Exportar Excel",
+                exportOptions: {
+                    columns: ':not(:last-child)'
+                }
+            },
+            {
+                extend: "pdf",
+                text: "Exportar PDF",
+                exportOptions: {
+                    columns: ':not(:last-child)'
+                }
+            }
+        ],
+        "language": {
+            "sProcessing": "Procesando...",
+            "sLengthMenu": "Mostrar _MENU_ registros",
+            "sZeroRecords": "No se encontraron resultados",
+            "sEmptyTable": "Ningún dato disponible en esta tabla",
+            "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
+            "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0",
+            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix": "",
+            "sSearch": "Buscar:",
+            "sUrl": "",
+            "sInfoThousands": ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            }
+        }
+    });
+</script>
+

@@ -6,13 +6,15 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using SystemProducts.Models;
+using ResendEmailClient;
+using System.Threading.Tasks;
 
 namespace SystemProducts.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly Database db = new Database(); // Contexto de BD como campo privado
-
+        private readonly ArquitecturaSoftwareEntities db = new ArquitecturaSoftwareEntities(); // Contexto de BD como campo privado
+        private readonly ResendService resendService = new ResendService("re_JjyGu1j2_26iBkMi96bSHzBpsTcbL87Cg");
 
         // GET: Login
         public ActionResult Index()
@@ -41,8 +43,34 @@ namespace SystemProducts.Controllers
                 Session["IDUsuario"] = usuario.IDUsuario;
                 Session["Nombre"] = usuario.Nombre;
                 Session["Rol"] = usuario.Rol;
+                // Enviar correo de inicio de sesión
+                Task.Run(async () =>
+                {
+                    try
+                    {
+                        await resendService.SendEmailAsync(
+                            "onboarding@resend.dev",
+                            correo,
+                            "Inicio de sesión exitoso",
+                            $"<h2>¡Hola, {usuario.Nombre}!</h2><p>Has iniciado sesión exitosamente en el sistema.</p><p>Fecha y hora: {DateTime.Now}</p>"
+                        );
+                    }
+                    catch (Exception ex)
+                    {
+                        // Logueá el error o ignorá según tus necesidades
+                        System.Diagnostics.Debug.WriteLine("Error enviando correo: " + ex.Message);
+                    }
+                });
+                if (usuario.Rol == "Cliente")
+                {
+                    return RedirectToAction("Presentacion", "Productos");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home"); // Redirige a la gestión de productos
 
-                return RedirectToAction("Index", "Home"); // Redirige a la gestión de productos
+                }
+                
             }
             else
             {

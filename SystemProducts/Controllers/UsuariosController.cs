@@ -10,7 +10,7 @@ namespace SystemProducts.Controllers
 {
     public class UsuariosController : Controller
     {
-        private readonly Database db = new Database(); // Contexto de BD como campo privado
+        private readonly ArquitecturaSoftwareEntities db = new ArquitecturaSoftwareEntities(); // Contexto de BD como campo privado
 
         // GET: Usuarios
         public ActionResult Index()

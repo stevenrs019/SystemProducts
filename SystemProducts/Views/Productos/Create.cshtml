@@ -1,0 +1,82 @@
+﻿@model SystemProducts.Models.PRODUCTOS
+
+@{
+    ViewBag.Title = "Agregar Producto";
+}
+
+<h2 class="text-primary"><i class="fa fa-plus"></i> Agregar Nuevo Producto</h2>
+
+@using (Html.BeginForm("Create", "Productos", FormMethod.Post, new { enctype = "multipart/form-data", id = "productForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", required = "required" })
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Categoría</label>
+            <div class="col-md-10">
+                @Html.DropDownList("IDCategoria", ViewBag.IDCategoria as SelectList, "Seleccione una categoría", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IDCategoria, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Precio, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Precio, new { @class = "form-control", type = "number", step = "0.01", required = "required" })
+                @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Stock, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Stock, new { @class = "form-control", type = "number", required = "required" })
+                @Html.ValidationMessageFor(model => model.Stock, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- Drag and Drop con Dropzone -->
+        <div class="form-group">
+            <label class="control-label col-md-2">Imagen del Producto</label>
+            <div class="col-md-10">
+                <div id="dropzone" class="dropzone"></div>
+                @Html.HiddenFor(model => model.Imagen) <!-- Guarda la ruta de la imagen -->
+                <small class="text-muted">Arrastra una imagen aquí o haz clic para subirla.</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Agregar Producto" class="btn btn-primary" />
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary" })
+            </div>
+        </div>
+    </div>
+}
+
+<!-- Configuración de Dropzone -->
+<script>
+    Dropzone.autoDiscover = false;
+    var myDropzone = new Dropzone("#dropzone", {
+        url: "@Url.Action("UploadImage", "Productos")",
+        paramName: "file",
+        maxFiles: 1,
+        acceptedFiles: "image/*",
+        addRemoveLinks: true,
+        dictDefaultMessage: "Arrastra una imagen aquí o haz clic para subirla",
+        success: function (file, response) {
+            document.getElementById("Imagen").value = response.imageUrl; // Guarda la URL de la imagen en el input oculto
+        }
+    });
+</script>

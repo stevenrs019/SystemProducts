@@ -1,0 +1,30 @@
+﻿@model SystemProducts.Models.PRODUCTOS
+
+@{
+    ViewBag.Title = "Detalles del Producto";
+}
+
+<h2 class="text-primary"><i class="fa fa-info-circle"></i> Detalles del Producto</h2>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="@Url.Content(Model.Imagen)" class="img-thumbnail" alt="@Model.Nombre" style="max-width: 100%;"
+                 onerror="this.onerror=null; this.src='/Content/Img/default.png';">
+        </div>
+        <div class="col-md-6">
+            <h3>@Model.Nombre</h3>
+            <p><strong>Categoría:</strong> @Model.CATEGORIAS_PRODUCTOS.NombreCategoria</p> 
+            <p><strong>Precio:</strong> $@Model.Precio.ToString("N2")</p>
+            <p><strong>Stock Disponible:</strong> @Model.Stock</p>
+            <p><strong>Fecha de Registro:</strong> @(Model.FechaRegistro.HasValue ? Model.FechaRegistro.Value.ToString("dd/MM/yyyy") : "N/A")</p>
+
+            <a href="@Url.Action("Edit", "Productos", new { id = Model.IDProducto })" class="btn btn-warning">
+                <i class="fa fa-edit"></i> Editar
+            </a>
+            <a href="@Url.Action("Index", "Productos")" class="btn btn-secondary">
+                <i class="fa fa-arrow-left"></i> Volver
+            </a>
+        </div>
+    </div>
+</div>

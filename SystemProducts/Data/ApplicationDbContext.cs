@@ -12,5 +12,7 @@ namespace SystemProducts.Data
         public ApplicationDbContext() : base("DefaultConnection") { }
 
         public DbSet<Usuario> Usuarios { get; set; }
+
+
     }
 }

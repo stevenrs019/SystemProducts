@@ -13,10 +13,10 @@ namespace SystemProducts.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Database : DbContext
+    public partial class ArquitecturaSoftwareEntities : DbContext
     {
-        public Database()
-            : base("name=Database")
+        public ArquitecturaSoftwareEntities()
+            : base("name=ArquitecturaSoftwareEntities")
         {
         }
     
@@ -25,6 +25,8 @@ namespace SystemProducts.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<CATEGORIAS_PRODUCTOS> CATEGORIAS_PRODUCTOS { get; set; }
+        public virtual DbSet<PRODUCTOS> PRODUCTOS { get; set; }
         public virtual DbSet<USUARIOS> USUARIOS { get; set; }
     }
 }
