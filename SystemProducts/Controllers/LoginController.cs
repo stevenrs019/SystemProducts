@@ -33,7 +33,7 @@ namespace SystemProducts.Controllers
                 return View();
             }
 
-            
+
 
             var usuario = db.USUARIOS.FirstOrDefault(u => u.Correo == correo && u.Contraseña == contraseña);
 
@@ -48,11 +48,24 @@ namespace SystemProducts.Controllers
                 {
                     try
                     {
+                        // 1. Ruta al template
+                        var templatePath = System.Web.Hosting.HostingEnvironment.MapPath("~/Views/Shared/EmailTemplates/LoginSuccess.html");
+
+                        // 2. Leer HTML
+                        var htmlTemplate = System.IO.File.ReadAllText(templatePath);
+
+                        // 3. Reemplazar contenido dinámico
+                        var htmlFinal = htmlTemplate
+                            .Replace("{NOMBRE}", usuario.Nombre)
+                            .Replace("{FECHA}", DateTime.Now.ToString("dd/MM/yyyy HH:mm"))
+                            .Replace("{ANIO}", DateTime.Now.Year.ToString());
+
+                        // 4. Enviar
                         await resendService.SendEmailAsync(
                             "onboarding@resend.dev",
-                            correo,
-                            "Inicio de sesión exitoso",
-                            $"<h2>¡Hola, {usuario.Nombre}!</h2><p>Has iniciado sesión exitosamente en el sistema.</p><p>Fecha y hora: {DateTime.Now}</p>"
+                correo,
+                "Inicio de sesión exitoso",
+                htmlFinal
                         );
                     }
                     catch (Exception ex)
@@ -70,7 +83,7 @@ namespace SystemProducts.Controllers
                     return RedirectToAction("Index", "Home"); // Redirige a la gestión de productos
 
                 }
-                
+
             }
             else
             {

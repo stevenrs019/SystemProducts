@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset='UTF-8'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body {{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }}
+        .container {{
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }}
+        .header {{
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }}
+        .content {{
+            padding: 20px;
+        }}
+        .footer {{
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }}
+        .button {{
+            display: inline-block;
+            padding: 12px 20px;
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }}
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1>¡Bienvenido de nuevo, {NOMBRE}!</h1>
+        </div>
+        <div class='content'>
+            <i class="fa fa-users" style="color: #094483; font-size: 18px;"></i>
+            <p>Se ha registrado un <strong>inicio de sesión exitoso</strong> en tu cuenta.</p>
+            <p><strong>Fecha y hora:</strong> {FECHA}</p>
+            <p>Si no fuiste vos, te recomendamos cambiar tu contraseña inmediatamente.</p>
+        </div>
+        <div class='footer'>
+            © {ANIO} Sistema de Productos. Todos los derechos reservados.
+        </div>
+    </div>
+</body>
+</html>

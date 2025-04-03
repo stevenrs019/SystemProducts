@@ -1,0 +1,86 @@
+﻿@model List<SystemProducts.Models.USUARIOS>
+@{
+    ViewBag.Title = "Reporte de Clientes";
+}
+
+<h2 class="text-primary mb-3"><i class="fa fa-chart-bar"></i> Reporte de Usuarios</h2>
+
+<form method="get" action="@Url.Action("Report", "Usuarios")" class="row mb-4">
+    <div class="col-md-4">
+        <label>Tipo de Usuario</label>
+        <select name="rol" class="form-control">
+            <option value="Todos" @(ViewBag.RolSeleccionado == "Todos" ? "selected" : "")>Todos</option>
+            <option value="Cliente" @(ViewBag.RolSeleccionado == "Cliente" ? "selected" : "")>Cliente</option>
+            <option value="Colaborador" @(ViewBag.RolSeleccionado == "Colaborador" ? "selected" : "")>Colaborador</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label>Estado</label>
+        <select name="estado" class="form-control">
+            <option value="Todos" @(ViewBag.EstadoSeleccionado == "Todos" ? "selected" : "")>Todos</option>
+            <option value="Activo" @(ViewBag.EstadoSeleccionado == "Activo" ? "selected" : "")>Activo</option>
+            <option value="Inactivo" @(ViewBag.EstadoSeleccionado == "Inactivo" ? "selected" : "")>Inactivo</option>
+        </select>
+    </div>
+    <div class="col-md-4 d-flex align-items-end">
+        <button type="submit" class="btn btn-primary w-100">
+            <i class="fa fa-search"></i> Buscar
+        </button>
+    </div>
+</form>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Fecha de Registro</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var usuario in Model)
+            {
+                <tr>
+                    <td>@usuario.Nombre</td>
+                    <td>@usuario.Apellido</td>
+                    <td>@usuario.Correo</td>
+                    <td>@usuario.Rol</td>
+                    <td>
+                        <span class="badge @(usuario.Estado == true ? "bg-success" : "bg-danger")">
+                            @(usuario.Estado == true ? "Activo" : "Inactivo")
+                        </span>
+                    </td>
+                    <td>@(usuario.FechaRegistro.HasValue ? usuario.FechaRegistro.Value.ToString("dd/MM/yyyy") : "N/A")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        No se encontraron usuarios con los filtros seleccionados.
+    </div>
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.table').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'csv', 'excel', 'pdf', 'print'
+                ],
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json'
+                }
+            });
+        });
+    </script>
+}
+

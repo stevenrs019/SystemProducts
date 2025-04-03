@@ -208,6 +208,35 @@ namespace SystemProducts.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Report(string rol = "Todos", string estado = "Todos")
+        {
+            if (Session["IDUsuario"] == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            var usuarios = db.USUARIOS.AsQueryable();
+
+            if (rol != "Todos")
+            {
+                usuarios = usuarios.Where(u => u.Rol == rol);
+            }
+
+            if (estado == "Activo")
+            {
+                usuarios = usuarios.Where(u => u.Estado == true);
+            }
+            else if (estado == "Inactivo")
+            {
+                usuarios = usuarios.Where(u => u.Estado == false);
+            }
+
+            ViewBag.RolSeleccionado = rol;
+            ViewBag.EstadoSeleccionado = estado;
+
+            return View(usuarios.ToList());
+        }
+
 
 
         protected override void Dispose(bool disposing)
