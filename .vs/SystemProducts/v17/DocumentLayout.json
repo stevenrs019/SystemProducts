@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\SystemProducts\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\SystemProducts\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{20228DB0-CEDB-433B-B84E-DEFA93D0EC59}|SystemProducts\\SystemProducts.csproj|c:\\users\\usuario\\source\\repos\\systemproducts\\systemproducts\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{20228DB0-CEDB-433B-B84E-DEFA93D0EC59}|SystemProducts\\SystemProducts.csproj|solutionrelative:systemproducts\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20228DB0-CEDB-433B-B84E-DEFA93D0EC59}|SystemProducts\\SystemProducts.csproj|c:\\users\\usuario\\source\\repos\\systemproducts\\systemproducts\\controllers\\registrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{20228DB0-CEDB-433B-B84E-DEFA93D0EC59}|SystemProducts\\SystemProducts.csproj|C:\\Users\\user\\source\\repos\\SystemProducts\\systemproducts\\controllers\\registrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{20228DB0-CEDB-433B-B84E-DEFA93D0EC59}|SystemProducts\\SystemProducts.csproj|solutionrelative:systemproducts\\controllers\\registrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20228DB0-CEDB-433B-B84E-DEFA93D0EC59}|SystemProducts\\SystemProducts.csproj|c:\\users\\usuario\\source\\repos\\systemproducts\\systemproducts\\views\\registro\\formulario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{20228DB0-CEDB-433B-B84E-DEFA93D0EC59}|SystemProducts\\SystemProducts.csproj|c:\\users\\user\\source\\repos\\systemproducts\\systemproducts\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{20228DB0-CEDB-433B-B84E-DEFA93D0EC59}|SystemProducts\\SystemProducts.csproj|solutionrelative:systemproducts\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20228DB0-CEDB-433B-B84E-DEFA93D0EC59}|SystemProducts\\SystemProducts.csproj|C:\\Users\\user\\source\\repos\\SystemProducts\\systemproducts\\views\\registro\\formulario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{20228DB0-CEDB-433B-B84E-DEFA93D0EC59}|SystemProducts\\SystemProducts.csproj|solutionrelative:systemproducts\\views\\registro\\formulario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -22,8 +22,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:948051171:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
@@ -54,49 +58,44 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:948051171:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Formulario.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SystemProducts\\SystemProducts\\Views\\Registro\\Formulario.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\SystemProducts\\SystemProducts\\Views\\Registro\\Formulario.cshtml",
               "RelativeDocumentMoniker": "SystemProducts\\Views\\Registro\\Formulario.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SystemProducts\\SystemProducts\\Views\\Registro\\Formulario.cshtml",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\SystemProducts\\SystemProducts\\Views\\Registro\\Formulario.cshtml",
               "RelativeToolTip": "SystemProducts\\Views\\Registro\\Formulario.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-07T00:55:06.801Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",
+              "WhenOpened": "2025-04-07T01:12:13.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RegistroController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\SystemProducts\\SystemProducts\\Controllers\\RegistroController.cs",
+              "RelativeDocumentMoniker": "SystemProducts\\Controllers\\RegistroController.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\SystemProducts\\SystemProducts\\Controllers\\RegistroController.cs",
+              "RelativeToolTip": "SystemProducts\\Controllers\\RegistroController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T01:12:13.448Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RegistroController.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SystemProducts\\SystemProducts\\Controllers\\RegistroController.cs",
-              "RelativeDocumentMoniker": "SystemProducts\\Controllers\\RegistroController.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SystemProducts\\SystemProducts\\Controllers\\RegistroController.cs",
-              "RelativeToolTip": "SystemProducts\\Controllers\\RegistroController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T00:54:20.908Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\SystemProducts\\SystemProducts\\Views\\Login\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\SystemProducts\\SystemProducts\\Views\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "SystemProducts\\Views\\Login\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\SystemProducts\\SystemProducts\\Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\SystemProducts\\SystemProducts\\Views\\Login\\Index.cshtml",
               "RelativeToolTip": "SystemProducts\\Views\\Login\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-06T05:32:19.749Z",
+              "WhenOpened": "2025-04-07T01:12:14.131Z",
               "EditorCaption": ""
             }
           ]
